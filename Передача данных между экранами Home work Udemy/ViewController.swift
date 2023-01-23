@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
     
     func adf(){
-        print("dsss")
+        print("Hi GitHub")
     }
     
 
