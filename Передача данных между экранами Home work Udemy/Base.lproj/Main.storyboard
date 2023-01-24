@@ -62,17 +62,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52G-uR-CHh">
-                                <rect key="frame" x="166" y="568" width="82" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ddU-Bj-GcN" kind="show" identifier="showThirdScreen" id="Zc1-l4-f9G"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIL-ph-qdK">
                                 <rect key="frame" x="167" y="361" width="85" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-dc-Bot">
-                                <rect key="frame" x="166" y="629" width="82" height="53"/>
+                                <rect key="frame" x="166" y="628" width="82" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                 <state key="normal" title="BACK">
@@ -118,24 +107,56 @@
                                     <action selector="redTapPressed:" destination="38m-Bc-bOA" eventType="touchUpInside" id="PSg-6o-cMA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZP-1h-7qr">
+                                <rect key="frame" x="20" y="469" width="374" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="greenView" translatesAutoresizingMaskIntoConstraints="NO" id="Fdu-WT-MgR">
+                                <rect key="frame" x="61" y="359" width="98" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="blueView" translatesAutoresizingMaskIntoConstraints="NO" id="fFv-ke-dnH">
+                                <rect key="frame" x="160" y="361" width="98" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="redView" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-Q6-9Yk">
+                                <rect key="frame" x="253" y="359" width="98" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8fz-0c-Bnm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="E9p-eC-KMP" appends="YES" id="bqB-bI-Ws7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="2ob-UX-jgC"/>
                     <connections>
+                        <outlet property="blueView" destination="fFv-ke-dnH" id="t1I-4e-zOt"/>
+                        <outlet property="counterLabel" destination="gZP-1h-7qr" id="rCD-BA-sjF"/>
+                        <outlet property="greenView" destination="Fdu-WT-MgR" id="CTk-PP-sW2"/>
                         <outlet property="label" destination="Jau-3t-f8m" id="Dbp-Od-c9l"/>
+                        <outlet property="redView" destination="0ht-Q6-9Yk" id="D1J-O5-hvE"/>
+                        <segue destination="ddU-Bj-GcN" kind="show" identifier="VCsegue" id="Sqp-Fg-3Fn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UJ-sL-Piv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="E7d-BE-eAt" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="E9p-eC-KMP"/>
             </objects>
             <point key="canvasLocation" x="753.62318840579712" y="85.714285714285708"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="sHS-mG-ZvT">
             <objects>
-                <viewController id="ddU-Bj-GcN" customClass="ThirdViewController" customModule="Передача_данных_между_экранами_Home_work_Udemy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thirdVC" id="ddU-Bj-GcN" customClass="ThirdViewController" customModule="Передача_данных_между_экранами_Home_work_Udemy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F1i-OT-UWg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
